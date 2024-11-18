@@ -1,4 +1,3 @@
-import 'package:dice_app/widgets.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,8 +29,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: GradientContainer(Color.fromARGB(255, 0, 60, 150),
-            Color.fromARGB(255, 76, 140, 175)));
+    return const Scaffold();
   }
 }
