@@ -5,6 +5,11 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("start screen");
+    return const Center(
+        child: Text(
+      "start screen",
+      style: TextStyle(
+          fontSize: 20, color: Colors.white, fontWeight: FontWeight.normal),
+    ));
   }
 }
