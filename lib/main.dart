@@ -15,21 +15,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(body: StartScreen()),
+      home: Scaffold(
+          body: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(colors: [
+                const Color.fromARGB(255, 78, 13, 151),
+                Color.fromARGB(255, 107, 15, 168)
+              ])),
+              child: StartScreen())),
     );
-  }
-}
-
-class Home extends StatefulWidget {
-  const Home({super.key});
-
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
   }
 }
