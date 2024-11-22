@@ -1,4 +1,5 @@
 import 'package:dice_app/start_screen.dart';
+import 'package:dice_app/widgets/quiz.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
-            child: const StartScreen()),
+            child: Quiz()),
       ),
     );
   }
