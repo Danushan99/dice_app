@@ -1,54 +1,49 @@
 import 'package:dice_app/start_screen.dart';
 import 'package:dice_app/widgets/qustions_screen.dart';
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Quiz extends StatefulWidget {
-  Quiz({super.key});
+  const Quiz({super.key});
 
   @override
-  State<Quiz> createState() => _QuizState();
+  State<Quiz> createState() {
+    return _QuizState();
+  }
 }
 
 class _QuizState extends State<Quiz> {
-  Widget activScreen = StartScreen();
+  var activeScreen = 'start-screen';
+
+  @override
+  // void initState() {
+  //   activeScreen = 'questions-screen';
+  // }
 
   void switchScreen() {
     setState(() {
-      activScreen = QuesrionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 300,
-            color: const Color.fromARGB(150, 255, 255, 255),
+  Widget build(context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 78, 13, 151),
+                Color.fromARGB(255, 107, 15, 168),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-          SizedBox(height: 80),
-          Text(
-            "Leaarn flutter in fun way",
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontWeight: FontWeight.normal),
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          OutlinedButton.icon(
-              onPressed: () {},
-              icon: Icon(Icons.play_circle_outline_outlined),
-              style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-              label: Text("Start Quiz"))
-        ],
+          child: activeScreen == 'start-screen'
+              ? StartScreen(switchScreen)
+              : const QuestionsScreen(),
+        ),
       ),
     );
   }
