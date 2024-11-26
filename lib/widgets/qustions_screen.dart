@@ -27,10 +27,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           const SizedBox(
             height: 30,
           ),
-          AnswerButton(answerText: currentQuestions.answers[0], onTap: () {}),
-          AnswerButton(answerText: currentQuestions.answers[1], onTap: () {}),
-          AnswerButton(answerText: currentQuestions.answers[2], onTap: () {}),
-          AnswerButton(answerText: currentQuestions.answers[3], onTap: () {}),
+          ...currentQuestions.answers.map((item) {
+            return AnswerButton(
+              answerText: item,
+              onTap: () {},
+            );
+          }),
         ],
       ),
     );
