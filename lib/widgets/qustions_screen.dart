@@ -30,7 +30,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           ...currentQuestions.answers.map((item) {
             return AnswerButton(
               answerText: item,
-              onTap: () {},
+              onTap: () {
+                
+              },
             );
           }),
         ],
