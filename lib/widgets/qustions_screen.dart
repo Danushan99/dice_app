@@ -1,9 +1,11 @@
 import 'package:dice_app/data/questions.dart';
 import 'package:dice_app/widgets/answer_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onSelectedAnswer});
+  final void Function(String answers) onSelectedAnswer;
 
   @override
   State<QuestionsScreen> createState() {
@@ -14,7 +16,8 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionsIndex = 0;
 
-  void anserQuestions() {
+  void anserQuestions(String selectedAnswer) {
+    widget.onSelectedAnswer(selectedAnswer);
     // currentQuestionsIndex = currentQuestionsIndex + 1;
     setState(() {
       currentQuestionsIndex++;
@@ -34,7 +37,10 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           children: [
             Text(
               currentQuestions.text,
-              style: TextStyle(color: Colors.white),
+              style: GoogleFonts.lato(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 24),
               textAlign: TextAlign.center,
             ),
             const SizedBox(
@@ -44,7 +50,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               return AnswerButton(
                 answerText: item,
                 onTap: () {
-                  anserQuestions();
+                  anserQuestions(item);
                 },
               );
             }),
