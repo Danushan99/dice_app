@@ -51,6 +51,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 answerText: item,
                 onTap: () {
                   anserQuestions(item);
+                  
                 },
               );
             }),
