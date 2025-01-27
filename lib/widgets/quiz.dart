@@ -1,3 +1,4 @@
+import 'package:dice_app/data/questions.dart';
 import 'package:dice_app/start_screen.dart';
 import 'package:dice_app/widgets/qustions_screen.dart';
 import 'package:flutter/material.dart';
@@ -12,14 +13,8 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-//  List<String> selectedAnswersList = [];
   List<String> selectedAnswer = [];
   var activeScreen = 'start-screen';
-
-  @override
-  // void initState() {
-  //   activeScreen = 'questions-screen';
-  // }
 
   void switchScreen() {
     setState(() {
@@ -29,8 +24,7 @@ class _QuizState extends State<Quiz> {
 
   void choosedAnswers(String answers) {
     selectedAnswer.add(answers);
-
-    if (selectedAnswer.length == answers.length) {
+    if (selectedAnswer.length == questions.length) {
       setState(() {
         selectedAnswer = [];
         activeScreen = 'start-screen';
