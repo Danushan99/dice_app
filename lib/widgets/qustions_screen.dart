@@ -21,6 +21,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     // currentQuestionsIndex = currentQuestionsIndex + 1;
     setState(() {
       currentQuestionsIndex++;
+      
     });
   }
 
@@ -51,7 +52,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 answerText: item,
                 onTap: () {
                   anserQuestions(item);
-                  
+
                 },
               );
             }),

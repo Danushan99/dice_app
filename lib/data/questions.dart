@@ -61,4 +61,13 @@ final questions = [
       'By calling updateState()',
     ],
   ),
+  QuizQuestion(
+    'Theepan is a ..?',
+    [
+      'Gay',
+      'gaY',
+      'gAy',
+      'GAY',
+    ],
+  ), 
 ];
