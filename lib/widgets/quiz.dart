@@ -1,6 +1,7 @@
 import 'package:dice_app/data/questions.dart';
 import 'package:dice_app/start_screen.dart';
 import 'package:dice_app/widgets/qustions_screen.dart';
+import 'package:dice_app/widgets/results_screen.dart';
 import 'package:flutter/material.dart';
 
 class Quiz extends StatefulWidget {
@@ -27,7 +28,7 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswer.length == questions.length) {
       setState(() {
         selectedAnswer = [];
-        activeScreen = 'start-screen';
+        activeScreen = 'result-screen';
       });
     }
   }
@@ -39,6 +40,11 @@ class _QuizState extends State<Quiz> {
     if (activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(
         onSelectedAnswer: choosedAnswers,
+      );
+    }
+    if (activeScreen == 'result-screen') {
+      screenWidget = ResultsScreen(
+        selectedAnswers: selectedAnswer,
       );
     }
     return MaterialApp(
