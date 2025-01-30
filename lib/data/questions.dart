@@ -67,7 +67,7 @@ final questions = [
       'Gay',
       'gaY',
       'gAy',
-      'GAY',
+      'new ',
     ],
   ), 
 ];
