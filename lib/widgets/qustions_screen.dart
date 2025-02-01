@@ -18,10 +18,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   void anserQuestions(String selectedAnswer) {
     widget.onSelectedAnswer(selectedAnswer);
-    // currentQuestionsIndex = currentQuestionsIndex + 1;
     setState(() {
       currentQuestionsIndex++;
-      
     });
   }
 
@@ -52,7 +50,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 answerText: item,
                 onTap: () {
                   anserQuestions(item);
-
                 },
               );
             }),
