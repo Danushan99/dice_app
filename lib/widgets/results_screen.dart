@@ -17,10 +17,8 @@ class ResultsScreen extends StatelessWidget {
         "user_answer": selectedAnswers[i],
       });
     }
-
     return summary;
   }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
