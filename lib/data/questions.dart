@@ -69,5 +69,5 @@ final questions = [
       'gAy',
       'new ',
     ],
-  ), 
+  ),
 ];
