@@ -1,5 +1,6 @@
 import 'package:dice_app/data/questions.dart';
 import 'package:dice_app/question_summery.dart';
+import 'package:dice_app/start_screen.dart';
 import 'package:dice_app/widgets/qustions_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,35 +24,38 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final summeryData = getSummery();
+    final numOfTotalQuestions = questions.length;
+    final numOfCorrectQuestions = summeryData.where((data) {
+      return data['user_answer'] == data['correct_answer'];
+    }).length;
+
     return SizedBox(
         width: double.infinity,
         child: Container(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.all(60),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Results',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                'List of answers and questions..!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
+              Center(
+                child: Text(
+                  'Your answer $numOfCorrectQuestions out of $numOfTotalQuestions qustions are correct ',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               const SizedBox(height: 30),
               QuestionSummery(getSummery()),
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('Restart Quiz'),
+              const SizedBox(height: 30),
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: Icon(Icons.refresh),
+                label: Text('Restart Quiz'),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 38, 1, 105),
+                    foregroundColor: Colors.white),
               ),
             ],
           ),
