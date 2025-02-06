@@ -1,4 +1,5 @@
 import 'package:dice_app/data/questions.dart';
+import 'package:dice_app/question_summery.dart';
 import 'package:dice_app/widgets/qustions_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class ResultsScreen extends StatelessWidget {
     }
     return summary;
   }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -44,6 +46,7 @@ class ResultsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
+              QuestionSummery(getSummery()),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop();
