@@ -1,12 +1,3 @@
-// import 'package:dice_app/models/quiz_questions.dart';
-
-// var questions = [
-//   QuizQuestions("hey...? how are you", ['good', 'bad', 'ugley']),
-//   QuizQuestions("hey...? how are you", ['good', 'bad', 'ugley']),
-//   QuizQuestions("hey...? how are you", ['good', 'bad', 'ugley']),
-//   QuizQuestions("hey...? how are you", ['good', 'bad', 'ugley']),
-// ];
-
 import 'package:dice_app/models/quiz_questions.dart';
 
 final questions = [

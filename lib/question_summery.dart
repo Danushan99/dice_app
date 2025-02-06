@@ -16,26 +16,37 @@ class QuestionSummery extends StatelessWidget {
           children: summeryData.map((data) {
             return Row(
               children: [
-                CircleAvatar(
-                    radius: 11,
-                    child:
-                        Text(((data['question_index'] as int) + 1).toString())),
                 Expanded(
                   child: Column(
                     children: [
-                      Text(
-                        (data['question'] as String),
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                      Row(
+                        children: [
+                          CircleAvatar(
+                              radius: 12,
+                              child: Text(((data['question_index'] as int) + 1)
+                                  .toString())),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(
+                            child: Text(
+                              (data['question'] as String),
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(
                         height: 5,
                       ),
-                      Text((data['correct_answer'] as String),
+                      Text(
+                          'Correct answer: ${(data['correct_answer'] as String)}',
                           style: TextStyle(color: Colors.green, fontSize: 15)),
                       SizedBox(
                         height: 5,
                       ),
-                      Text((data['user_answer'] as String),
+                      Text('Your answer: ${(data['user_answer'] as String)}',
                           style: TextStyle(
                               color: const Color.fromRGBO(253, 202, 168, 1),
                               fontSize: 15)),

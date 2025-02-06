@@ -5,9 +5,12 @@ import 'package:dice_app/widgets/qustions_screen.dart';
 import 'package:flutter/material.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.selectedAnswers});
+  const ResultsScreen(
+      {super.key, required this.selectedAnswers, required this.onRestart});
 
   final List<String> selectedAnswers;
+  final void Function() onRestart;
+
   List<Map<String, Object>> getSummery() {
     final List<Map<String, Object>> summary = [];
 
@@ -15,7 +18,7 @@ class ResultsScreen extends StatelessWidget {
       summary.add({
         "question_index": i,
         "question": questions[i].text,
-        "correct_answer": questions[1].answers[0],
+        "correct_answer": questions[i].answers[0],
         "user_answer": selectedAnswers[i],
       });
     }
@@ -50,7 +53,9 @@ class ResultsScreen extends StatelessWidget {
               QuestionSummery(getSummery()),
               const SizedBox(height: 30),
               ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  onRestart();
+                },
                 icon: Icon(Icons.refresh),
                 label: Text('Restart Quiz'),
                 style: ElevatedButton.styleFrom(
