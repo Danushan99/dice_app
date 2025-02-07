@@ -1,4 +1,3 @@
-import 'package:dice_app/data/questions.dart';
 import 'package:flutter/material.dart';
 
 class QuestionSummery extends StatelessWidget {
@@ -25,30 +24,31 @@ class QuestionSummery extends StatelessWidget {
                               radius: 12,
                               child: Text(((data['question_index'] as int) + 1)
                                   .toString())),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
                             child: Text(
                               (data['question'] as String),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 15),
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 15),
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
                           'Correct answer: ${(data['correct_answer'] as String)}',
-                          style: TextStyle(color: Colors.green, fontSize: 15)),
-                      SizedBox(
+                          style: const TextStyle(
+                              color: Colors.green, fontSize: 15)),
+                      const SizedBox(
                         height: 5,
                       ),
                       Text('Your answer: ${(data['user_answer'] as String)}',
-                          style: TextStyle(
-                              color: const Color.fromRGBO(253, 202, 168, 1),
+                          style: const TextStyle(
+                              color: Color.fromRGBO(253, 202, 168, 1),
                               fontSize: 15)),
                     ],
                   ),

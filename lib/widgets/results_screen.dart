@@ -1,7 +1,5 @@
 import 'package:dice_app/data/questions.dart';
 import 'package:dice_app/question_summery.dart';
-import 'package:dice_app/start_screen.dart';
-import 'package:dice_app/widgets/qustions_screen.dart';
 import 'package:flutter/material.dart';
 
 class ResultsScreen extends StatelessWidget {
@@ -43,7 +41,7 @@ class ResultsScreen extends StatelessWidget {
               Center(
                 child: Text(
                   'Your answer $numOfCorrectQuestions out of $numOfTotalQuestions qustions are correct ',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 20,
                   ),
@@ -56,8 +54,8 @@ class ResultsScreen extends StatelessWidget {
                 onPressed: () {
                   onRestart();
                 },
-                icon: Icon(Icons.refresh),
-                label: Text('Restart Quiz'),
+                icon: const Icon(Icons.refresh),
+                label: const Text('Restart Quiz'),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 38, 1, 105),
                     foregroundColor: Colors.white),
